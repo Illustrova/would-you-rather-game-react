@@ -1,0 +1,91 @@
+// Update Bulma's derived variables
+@import "~bulma/sass/utilities/initial-variables";
+$navbar-breakpoint: $tablet;
+
+@import "~bulma/bulma.sass";
+
+.mt-auto {
+	margin-top: auto;
+}
+
+.is-stacked-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.content-center {
+	justify-content: center;
+}
+
+.is-stacked-column .radio + .radio {
+	margin-left: 0;
+}
+
+.has-flex-grow {
+	flex-grow: 2;
+}
+
+.is-fullheight {
+	height: 100%;
+}
+
+.panel-block.is-vertical {
+	flex-direction: column;
+}
+
+.box.is-fullwidth {
+	width: 100%;
+}
+
+.question__overlay {
+	display: flex;
+
+	background-color: rgba(20, 20, 20, 0.5);
+}
+
+label.is-rounded {
+	border-radius: 50%;
+}
+
+input[type="radio"] {
+	display: none;
+
+	& + label {
+		border: transparent 3px solid;
+	}
+
+	&:checked + label {
+		background: $primary-light;
+		border: $primary 3px solid;
+
+		& + .radio-title {
+			color: $primary-dark;
+		}
+	}
+}
+
+.radio-title:hover {
+	color: $primary-dark;
+}
+
+.columns {
+	align-items: stretch;
+}
+
+.column {
+	display: flex;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.card-footer {
+	margin-top: auto;
+}
