@@ -79,6 +79,7 @@ class Nav extends Component {
 							<div className="navbar-dropdown">
 								<a
 									role="button"
+									href="##"
 									onClick={this.onLogout}
 									className="navbar-item">
 									Logout

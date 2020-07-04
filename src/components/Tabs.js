@@ -17,7 +17,7 @@ function Tabs(props) {
 						tabIndex="0"
 						aria-selected={tab === tabNames[activeTab]}
 						aria-controls={`tab_${index}`}>
-						<a>{tab}</a>
+						<a href="##">{tab}</a>
 					</li>
 				))}
 			</ul>

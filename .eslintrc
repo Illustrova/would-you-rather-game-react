@@ -2,7 +2,7 @@
 	"env": {
 		"browser": true,
 		"es6": true,
-		"node": true,
+		"node": true
 	},
 	"parser": "babel-eslint",
 	"parserOptions": {
@@ -11,8 +11,8 @@
 		"allowImportExportEverywhere": true,
 		 "ecmaFeatures": {
       "jsx": true,
-      "modules": true,
-		},
+      "modules": true
+		}
   },
 	"extends": ["airbnb", "prettier", "prettier/react"],
 	"plugins": ["react",
@@ -34,12 +34,13 @@
 			}
 		],
 		"react/prop-types": 0,
+		"jsx-a11y/anchor-is-valid": 0,
 		"react/state-in-constructor": 0,
 		"no-return-assign": [2, "except-parens"],
 		"jsx-a11y/label-has-associated-control": [
-		"error",
-		{ "assert": "either"
-		}
-	]
+			"error",
+			{ "assert": "either" },
+		],
+			
 }
 }
