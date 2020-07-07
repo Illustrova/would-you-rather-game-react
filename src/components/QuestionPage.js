@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import QuestionContainer from "./QuestionContainer";
 
@@ -8,13 +7,9 @@ function QuestionPage(props) {
 
 	return (
 		<div className="columns is-centered is-vcentered">
-			<QuestionContainer id={id} />
+			<QuestionContainer id={id} isTeaser={false} />
 		</div>
 	);
 }
-
-QuestionPage.propTypes = {
-	id: PropTypes.string.isRequired,
-};
 
 export default withRouter(QuestionPage);

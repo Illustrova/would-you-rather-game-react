@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
+import LoadingBar from "react-redux-loading-bar";
 
 import { login } from "../actions/authedUser";
 
@@ -54,6 +55,7 @@ class Login extends Component {
 		}
 		return (
 			<div className="column is-4 is-offset-4">
+				<LoadingBar />
 				<form className="box is-fullwidth px-5" onSubmit={this.handleSubmit}>
 					<div className="is-stacked-column items-center">
 						{CHARACTERS.map((char) => (

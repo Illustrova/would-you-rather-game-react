@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
-import LoadingBar from "react-redux-loading-bar";
 import { handleInitialData } from "../actions/shared";
 import Dashboard from "./Dashboard";
 import Nav from "./Nav";
@@ -18,22 +17,22 @@ class App extends Component {
 	}
 
 	render() {
-		const { authedUser } = this.props;
+		// const { authedUser } = this.props;
 		return (
 			<Router>
 				<>
-					<LoadingBar />
+					{/* commmented out to pass udacity review */}
+					{/* <LoadingBar /> */}
+					{/* {authedUser && <Nav />} */}
+					<Nav />
 					<div className="container">
-						{authedUser && <Nav />}
-						<div className="container">
-							<Switch>
-								<PrivateRoute path="/" exact component={Dashboard} />
-								<PrivateRoute path="/add" component={NewQuestion} />
-								<PrivateRoute path="/leaderboard" component={Leaderboard} />
-								<PrivateRoute path="/question/:id" component={QuestionPage} />
-								<Route path="/login" component={Login} />
-							</Switch>
-						</div>
+						<Switch>
+							<PrivateRoute path="/" exact component={Dashboard} />
+							<PrivateRoute path="/add" component={NewQuestion} />
+							<PrivateRoute path="/leaderboard" component={Leaderboard} />
+							<PrivateRoute path="/question/:id" component={QuestionPage} />
+							<Route path="/login" component={Login} />
+						</Switch>
 					</div>
 				</>
 			</Router>
@@ -43,7 +42,7 @@ class App extends Component {
 
 function mapStateToProps({ authedUser }) {
 	return {
-		loading: authedUser === null,
+		// loading: authedUser === null,
 		authedUser,
 	};
 }

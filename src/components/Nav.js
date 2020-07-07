@@ -68,14 +68,16 @@ class Nav extends Component {
 					</div>
 					<div className="navbar-end">
 						<div className="navbar-item has-dropdown is-hoverable">
-							<div className="navbar-link">
-								<div className="navbar-item">Hello, {currentUser.name}</div>
-								<img
-									className="is-rounded"
-									src={currentUser.avatarURL}
-									alt={`avatar ${currentUser.name}`}
-								/>
-							</div>
+							{currentUser && (
+								<div className="navbar-link">
+									<div className="navbar-item">Hello, {currentUser.name}</div>
+									<img
+										className="is-rounded"
+										src={currentUser.avatarURL}
+										alt={`avatar ${currentUser.name}`}
+									/>
+								</div>
+							)}
 							<div className="navbar-dropdown">
 								<a
 									role="button"
@@ -98,7 +100,7 @@ const mapStateToProps = ({ authedUser, users }) => ({
 });
 
 Nav.propTypes = {
-	currentUser: PropTypes.object.isRequired,
+	currentUser: PropTypes.object,
 };
 
 export default connect(mapStateToProps)(Nav);

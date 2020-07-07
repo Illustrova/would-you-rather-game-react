@@ -25,7 +25,7 @@ class QuestionPoll extends Component {
 	};
 
 	render() {
-		const { id, optionOneText, optionTwoText } = this.props;
+		const { id, optionOneText, optionTwoText, isTeaser } = this.props;
 		const { optionSelected } = this.state;
 		return (
 			<div className="content has-text-centered is-fullheight">
@@ -39,6 +39,7 @@ class QuestionPoll extends Component {
 						type="radio"
 						checked={optionSelected === "optionOne"}
 						onChange={this.onValueChange}
+						disabled={isTeaser}
 					/>
 					<label
 						htmlFor={`${id}_option1`}
@@ -52,6 +53,7 @@ class QuestionPoll extends Component {
 						type="radio"
 						checked={optionSelected === "optionTwo"}
 						onChange={this.onValueChange}
+						disabled={isTeaser}
 					/>
 					<label
 						htmlFor={`${id}_option2`}
@@ -59,12 +61,14 @@ class QuestionPoll extends Component {
 						{`${optionTwoText}`}
 					</label>
 					<div className="mt-auto">
-						<button
-							className="button is-primary mt-3 mt-auto"
-							type="submit"
-							disabled={!optionSelected}>
-							Submit
-						</button>
+						{!isTeaser && (
+							<button
+								className="button is-primary mt-3 mt-auto"
+								type="submit"
+								disabled={!optionSelected}>
+								Submit
+							</button>
+						)}
 					</div>
 				</form>
 			</div>

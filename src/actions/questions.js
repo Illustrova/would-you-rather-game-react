@@ -19,11 +19,13 @@ export function saveQuestionAnswer(authedUser, id, answer) {
 	};
 }
 export function createQuestion({ optionOneText, optionTwoText, author }) {
-	return (dispatch) =>
-		saveQuestion({ optionOneText, optionTwoText, author }).then((question) =>
-			dispatch({
-				type: SAVE_QUESTION,
-				question,
-			})
+	return async (dispatch) => {
+		return saveQuestion({ optionOneText, optionTwoText, author }).then(
+			(question) =>
+				dispatch({
+					type: SAVE_QUESTION,
+					question,
+				})
 		);
+	};
 }

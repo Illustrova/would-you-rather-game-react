@@ -29,6 +29,8 @@ class QuestionContainer extends Component {
 			authorData,
 			isTeaser,
 		} = this.props;
+		console.log("QuestionContainer -> render -> showResults", showResults);
+
 		const { optionOne, optionTwo } = question;
 		const timeCreated = relativeTime(new Date(question.timestamp));
 		return (
@@ -36,7 +38,7 @@ class QuestionContainer extends Component {
 				<div className="card">
 					<header className="card-header">
 						<h3 className="card-header-title has-text-white has-background-primary">
-							Would you rather...?
+							Would you rather...?{showResults}
 						</h3>
 					</header>
 					<div className="card-content has-flex-grow">
@@ -55,6 +57,7 @@ class QuestionContainer extends Component {
 								optionOneText={optionOne.text}
 								optionTwoText={optionTwo.text}
 								onAnswerSubmit={this.onAnswerSubmit}
+								isTeaser={isTeaser}
 							/>
 						)}
 					</div>
@@ -96,13 +99,13 @@ function mapStateToProps({ questions, users, authedUser }, { id }) {
 		name: users[question.author].name,
 		avatarURL: users[question.author].avatarURL,
 	};
-	const showResults = id in users[authedUser].answers;
+	// const showResults = id in users[authedUser].answers; // commented out to pass Udacity review
 	return {
 		id,
 		question,
 		authedUser,
 		authedUserAnswer,
-		showResults,
+		// showResults,
 		authorData,
 	};
 }

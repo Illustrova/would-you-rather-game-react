@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
+import LoadingBar from "react-redux-loading-bar";
 import { createQuestion } from "../actions/questions";
 
 class NewQuestion extends Component {
@@ -49,6 +50,7 @@ class NewQuestion extends Component {
 		return (
 			<div className="columns is-multiline is-centered">
 				<div className="column is-one-third-widescreen is-half-desktop">
+					<LoadingBar />
 					<div className="card">
 						<header className="card-header">
 							<h3 className="card-header-title has-text-white has-background-primary">

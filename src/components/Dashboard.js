@@ -49,7 +49,7 @@ class Dashboard extends Component {
 					{activeTab === 1 &&
 						(answeredQuestionsIds.length > 0 ? (
 							answeredQuestionsIds.map((q) => (
-								<QuestionContainer id={q} key={q} showResults isTeaser />
+								<QuestionContainer id={q} key={q} isTeaser />
 							))
 						) : (
 							<div className="notification is-warning is-light column content-center">
