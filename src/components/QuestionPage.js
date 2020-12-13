@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
 import QuestionContainer from "./QuestionContainer";
 
 function QuestionPage(props) {
@@ -12,4 +12,8 @@ function QuestionPage(props) {
 	);
 }
 
-export default withRouter(QuestionPage);
+QuestionPage.propTypes = {
+	id: PropTypes.string.isRequired,
+};
+
+export default QuestionPage;
