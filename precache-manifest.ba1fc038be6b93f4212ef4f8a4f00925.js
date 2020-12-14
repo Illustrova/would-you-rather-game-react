@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "01f3bab4f4cc005aefff9c6e493a3ac2",
+    "revision": "8b9b5ee5e72ef0503ca8c04db1caffce",
     "url": "/would-you-rather-game-react/index.html"
   },
   {
-    "revision": "75c462fb8c034c2649e8",
+    "revision": "1e5011dcd237a5b46155",
     "url": "/would-you-rather-game-react/static/css/main.db989ac0.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/would-you-rather-game-react/static/js/2.38991c23.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "75c462fb8c034c2649e8",
-    "url": "/would-you-rather-game-react/static/js/main.cc9ef7d8.chunk.js"
+    "revision": "1e5011dcd237a5b46155",
+    "url": "/would-you-rather-game-react/static/js/main.01b9165c.chunk.js"
   },
   {
     "revision": "e9de5e812fa4a3d5dc40",
