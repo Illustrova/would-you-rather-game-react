@@ -1,6 +1,5 @@
 # "Would You Rather..?" Game
 
----
 A project developed for Udacity React Developer Nanodegree.
 
 ## Description
