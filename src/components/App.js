@@ -10,6 +10,7 @@ import QuestionPage from "./QuestionPage";
 import NewQuestion from "./NewQuestion";
 import Leaderboard from "./Leaderboard";
 import PrivateRoute from "./PrivateRoute";
+import Page404 from "./Page404";
 
 class App extends Component {
 	componentDidMount() {
@@ -31,6 +32,7 @@ class App extends Component {
 							<PrivateRoute path="/leaderboard" component={Leaderboard} />
 							<PrivateRoute path="/question/:id" component={QuestionPage} />
 							<Route path="/login" component={Login} />
+							<Route path="/404" component={Page404} />
 						</Switch>
 					</div>
 				</>

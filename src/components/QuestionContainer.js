@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { relativeTime } from "../utils/helpers";
 import QuestionPoll from "./QuestionPoll";
 import QuestionResults from "./QuestionResults";
@@ -29,6 +29,10 @@ class QuestionContainer extends Component {
 			authorData,
 			isTeaser,
 		} = this.props;
+
+		if (!question) {
+			return <Redirect to="/404" />;
+		}
 		const { optionOne, optionTwo } = question;
 		const timeCreated = relativeTime(new Date(question.timestamp));
 		return (
@@ -93,10 +97,11 @@ class QuestionContainer extends Component {
 function mapStateToProps({ questions, users, authedUser }, { id }) {
 	const question = questions[id];
 	const authedUserAnswer = users[authedUser].answers[id];
-	const authorData = {
-		name: users[question.author].name,
-		avatarURL: users[question.author].avatarURL,
-	};
+	const authorData = users &&
+		question && {
+			name: users[question.author].name,
+			avatarURL: users[question.author].avatarURL,
+		};
 	const showResults = id in users[authedUser].answers; // commented out to pass Udacity review
 	return {
 		id,
@@ -111,12 +116,12 @@ function mapStateToProps({ questions, users, authedUser }, { id }) {
 QuestionContainer.propTypes = {
 	id: PropTypes.string.isRequired,
 	authedUserAnswer: PropTypes.oneOf(["optionOne", "optionTwo"]),
-	question: PropTypes.object.isRequired,
+	question: PropTypes.object,
 	showResults: PropTypes.bool,
 	authorData: PropTypes.shape({
 		name: PropTypes.string,
 		avatarURL: PropTypes.string,
-	}).isRequired,
+	}),
 };
 
 QuestionContainer.defaultProps = {
