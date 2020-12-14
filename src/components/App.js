@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
+import LoadingBar from "react-redux-loading-bar";
 import { handleInitialData } from "../actions/shared";
 import Dashboard from "./Dashboard";
 import Nav from "./Nav";
@@ -17,14 +18,12 @@ class App extends Component {
 	}
 
 	render() {
-		// const { authedUser } = this.props;
+		const { authedUser } = this.props;
 		return (
 			<Router>
 				<>
-					{/* commmented out to pass udacity review */}
-					{/* <LoadingBar /> */}
-					{/* {authedUser && <Nav />} */}
-					<Nav />
+					<LoadingBar />
+					{authedUser && <Nav />}
 					<div className="container">
 						<Switch>
 							<PrivateRoute path="/" exact component={Dashboard} />

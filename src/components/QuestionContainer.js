@@ -29,8 +29,6 @@ class QuestionContainer extends Component {
 			authorData,
 			isTeaser,
 		} = this.props;
-		console.log("QuestionContainer -> render -> showResults", showResults);
-
 		const { optionOne, optionTwo } = question;
 		const timeCreated = relativeTime(new Date(question.timestamp));
 		return (
@@ -99,13 +97,13 @@ function mapStateToProps({ questions, users, authedUser }, { id }) {
 		name: users[question.author].name,
 		avatarURL: users[question.author].avatarURL,
 	};
-	// const showResults = id in users[authedUser].answers; // commented out to pass Udacity review
+	const showResults = id in users[authedUser].answers; // commented out to pass Udacity review
 	return {
 		id,
 		question,
 		authedUser,
 		authedUserAnswer,
-		// showResults,
+		showResults,
 		authorData,
 	};
 }
